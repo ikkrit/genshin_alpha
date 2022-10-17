@@ -8,8 +8,13 @@
 
     $model = new AnnoncesModel;
 
-    $annonces = $model->findBy(['actif' => 1]);
+    $annonce = $model
+        ->setTitre('Nouvelle annonce')
+        ->setDescription('Nouvelle description')
+        ->setActif(1);
 
-    var_dump($annonces);
+    $model->create($annonce);
+
+    var_dump($annonce);
 
 ?>
