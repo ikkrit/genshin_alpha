@@ -7,7 +7,7 @@
     use App\Core\Main;
 
     // IMPORT AUTOLOADER
-    require_once ROOT.'../Autoloader.php';
+    require_once ROOT.'/Autoloader.php';
     Autoloader::register();
 
     // INSTANCE MAIN (ROUTEUR)

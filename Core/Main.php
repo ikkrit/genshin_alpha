@@ -2,6 +2,8 @@
 
     namespace App\Core;
 
+    use App\Controllers\MainController;
+
     class Main
     {
         public function start()
@@ -10,17 +12,18 @@
             $uri = $_SERVER['REQUEST_URI'];
 
             // VERIF URI ET SI /
-            if(!empty($uri) && $uri != '/' && $uri[-1] === '/'){
+            if(!empty($uri) && $uri != '/' && $uri[-1] === '/') {
                 // ENLEVE "/"
                 $uri = substr($uri,0,-1);
                 // RENVOI CODE REDIRECTION PERMA
                 http_response_code(301);
                 // REDIRECTION URL SANS "/"
                 header('Location: '.$uri);
+                exit;
             }
 
             // GESTION PARAMS URL
-            // p=controleur/methode/paramètres
+            // P=CONTROLEUR/METHODE/PARAMETRES
             // PARAMS -> TABLEAU
             $params = [];
 
@@ -28,9 +31,19 @@
                 $params = explode('/',$_GET['p']);
 
             if($params[0] != '') {
-                // RECUP 1 PARAMS MINI
+                // AU MOIN UN PARAMETRE
+                // RECUP NOM DU CONTROLEUR A INSTANCIER
+                // NAMESPACE/CONTROLEUR/MAJUSCULE
+                // (EXEMPLE -> \App\Controllers\HomeController)
+                $controller = '\\App\\Controllers\\'.ucfirst(array_shift($params)).'Controller';
+                var_dump($controller);
+                
+                
             } else {
-                echo "Pas de paramètres";
+                // PAS DE PARAMETRE -> CONTROLEUR PAR DEFAUT
+                $controller = new MainController;
+                // APPELLE DE LA METHODE INDEX
+                $controller->index();
             }
 
         }
