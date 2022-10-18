@@ -1,10 +1,10 @@
 <?php
 
-    namespace App\Db;
+    namespace App\Core;
 
     //IMPORT PDO
     use PDO;
-use PDOException;
+    use PDOException;
 
     class Db extends PDO
     {
