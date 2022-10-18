@@ -1,10 +1,10 @@
 <?php
 
-    use App\Autoloader;
-    use App\Core\Main;
-
     // CONST RACINE
     define('ROOT', dirname(__DIR__));
+
+    use App\Autoloader;
+    use App\Core\Main;
 
     // IMPORT AUTOLOADER
     require_once ROOT.'../Autoloader.php';
