@@ -4,6 +4,10 @@
 
     use App\Controllers\MainController;
 
+    /**
+     * MAIN ROUTEUR
+     */
+
     class Main
     {
         public function start()
@@ -35,9 +39,19 @@
                 // RECUP NOM DU CONTROLEUR A INSTANCIER
                 // NAMESPACE/CONTROLEUR/MAJUSCULE
                 // (EXEMPLE -> \App\Controllers\HomeController)
-                $controller = '\\App\\Controllers\\'.ucfirst(array_shift($params)).'Controller';
-                var_dump($controller);
-                
+                $controller = '\\App\\Controllers\\'.ucfirst(array_shift($params)).'Controller'; 
+                // INSTANCE CONTROLEUR
+                $controller = new $controller();
+                // RECUPERATION 2eme PARAMS URL
+                $action = (isset($params[0])) ? array_shift($params) : 'index';
+
+                if(method_exists($controller, $action)) {
+                    // SI AUTRES PARAMS -> PASSE A LA METHODE
+                    (isset($params[0])) ? $controller->$action($params) : $controller->$action();
+                } else {
+                    http_response_code(404);
+                    echo "La page est introuvable!!!!";
+                }
                 
             } else {
                 // PAS DE PARAMETRE -> CONTROLEUR PAR DEFAUT
