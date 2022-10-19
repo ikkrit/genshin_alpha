@@ -18,8 +18,12 @@
 
         public function read(int $id)
         {
-            //INSTANCE MODEL
+            // INSTANCE MODEL
             $annoncesModel = new AnnoncesModel;
+            // CHERCHER 1 ANNONCES
+            $annonce = $annoncesModel->find($id);
+            // ENVOIE A LA VUE
+            $this->render('annonces/read', compact('annonce'));
         }
     }
 
