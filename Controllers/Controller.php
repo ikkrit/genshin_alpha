@@ -7,9 +7,9 @@
         public function render(string $file, array $donnees = [])
         {
             // EXTRACTION DONNEES
-            var_dump($donnees);
             extract($donnees);
-
+            // CHEMIN VIEWS
+            require_once ROOT.'/Views/'.$file.'.php';
         }
     }
 

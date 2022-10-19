@@ -12,8 +12,14 @@
             $annoncesModel = new AnnoncesModel;
             // RECHERCHE ANNONCES
             $annonces = $annoncesModel->findBy(['actif' => 1]);
+            // GENERATE VIEWS
+            $this->render('annonces/index', compact('annonces'));
+        }
 
-            $this->render('annonces/index', ['annonces' => $annonces]);
+        public function read(int $id)
+        {
+            //INSTANCE MODEL
+            $annoncesModel = new AnnoncesModel;
         }
     }
 

@@ -47,7 +47,7 @@
 
                 if(method_exists($controller, $action)) {
                     // SI AUTRES PARAMS -> PASSE A LA METHODE
-                    (isset($params[0])) ? $controller->$action($params) : $controller->$action();
+                    (isset($params[0])) ? call_user_func_array([$controller,$action], $params) : $controller->$action();
                 } else {
                     http_response_code(404);
                     echo "La page est introuvable!!!!";
