@@ -6,7 +6,7 @@
     {
         protected $template = 'default';
 
-        public function render(string $file, array $donnees = [])
+        public function render(string $file, array $donnees = [], string $template = 'default')
         {
             // EXTRACTION DONNEES
             extract($donnees);
@@ -21,7 +21,7 @@
             $content = ob_get_clean();
 
             // TEMPLATE PAGE
-            require_once ROOT.'/Views/'.$this->template.'.php';
+            require_once ROOT.'/Views/'.$template.'.php';
 
         }
     }

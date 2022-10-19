@@ -6,8 +6,7 @@
     {
         public function index()
         {
-            $this->template = 'home';
-            $this->render('main/index', []);
+            $this->render('main/index', [], 'home');
         }
     }
 

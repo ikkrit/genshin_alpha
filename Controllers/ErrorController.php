@@ -6,8 +6,7 @@
     {   
         public function index()
         {
-            $this->template = '404';
-            $this->render('main/index', []);
+            $this->render('main/index', [], '404');
         }
     }
 
