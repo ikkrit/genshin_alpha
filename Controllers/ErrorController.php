@@ -2,11 +2,11 @@
 
     namespace App\Controllers;
 
-    class MainController extends Controller
-    {
+    class ErrorController extends Controller
+    {   
         public function index()
         {
-            $this->template = 'home';
+            $this->template = '404';
             $this->render('main/index', []);
         }
     }

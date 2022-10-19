@@ -40,6 +40,7 @@
                 // NAMESPACE/CONTROLEUR/MAJUSCULE
                 // (EXEMPLE -> \App\Controllers\HomeController)
                 $controller = '\\App\\Controllers\\'.ucfirst(array_shift($params)).'Controller'; 
+                class_exists($controller) ? $controller : $controller = '\\App\\Controllers\\ErrorController'; 
                 // INSTANCE CONTROLEUR
                 $controller = new $controller();
                 // RECUPERATION 2eme PARAMS URL
