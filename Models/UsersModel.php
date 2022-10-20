@@ -14,6 +14,13 @@
             $this->table = strtolower(str_replace('Model', '',$class));
         }
 
+        // RECUPERER USER A PARTIR DU MAIL
+        public function findOneByEmail(string $email)
+        {
+            return $this->request("SELECT * FROM {$this->table} WHERE email = ?", [$email])->fetch();
+        }
+
+
         public function getId()
         {
                 return $this->id;

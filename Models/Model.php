@@ -6,53 +6,53 @@
 
     class Model extends Db
     {
-        //TABLE BASE DE DONNEES
+        // TABLE BASE DE DONNEES
         protected $table;
 
-        //INSTANCE DB
+        // INSTANCE DB
         private $db;
 
-        //FIND ALL//
+        // FIND ALL //
         public function findAll() {
 
             $query = $this->request('SELECT * FROM '. $this->table);
             return $query->fetchAll();
         }
 
-        //FIND BY//
+        // FIND BY //
         public function findBy(array $criteres) {
 
             $fields = [];
             $values = [];
 
-            //BOUCLE TABLEAU
+            // BOUCLE TABLEAU
             foreach($criteres as $field => $value) {
 
                 $fields[] = "$field = ?";
                 $values[] = $value;
             }
             
-            //FIELDS -> STRING
+            // FIELDS -> STRING
             $fields_list = implode(' AND ', $fields);
 
-            //REQUEST
+            // REQUEST
             return $this->request('SELECT * FROM '.$this->table.' WHERE '. $fields_list, $values)->fetchAll();
         }
 
-        //FIND//
+        // FIND //
         public function find(int $id) {
 
             return $this->request("SELECT * FROM {$this->table} WHERE id = $id")->fetch();
         }
 
-        //CREATE//
-        public function create(Model $model) {
+        // $USER->CREATE($USER) //
+        public function create() {
 
             $fields = [];
             $inter = [];
             $values = [];
 
-            foreach($model as $field => $value) {
+            foreach($this as $field => $value) {
 
                 if($value !== null && $field != 'db' && $field != 'table') {
 
@@ -62,22 +62,24 @@
                 }
             }
 
-            //FIELDS -> STRING
+            // FIELDS -> STRING
             $fields_list = implode(', ', $fields);
             $inter_list = implode(', ', $inter);
 
-            //REQUEST
+            // REQUEST
             return $this->request('INSERT INTO '.$this->table.' ('. $fields_list.') VALUES('.$inter_list.')', $values);
         }
 
-        //UPDATE//
-        public function update(int $id, Model $model) {
+        // UPDATE //
+        public function update() {
 
             $fields = [];
             $values = [];
 
-            foreach($model as $field => $value) {
+            // ON BOUCLE POUR ECLATER LE TABLEAU
+            foreach($this as $field => $value) {
 
+                // UPDATE ? SET ? = ?, ? = ?, ? = ? WHERE ?= ?
                 if($value !== null && $field != 'db' && $field != 'table') {
 
                     $fields[] = "$field = ?";
@@ -85,28 +87,28 @@
                 }
             }
 
-            $values[] = $id;
+            $values[] = $this->id;
 
-            //FIELDS -> STRING
+            // FIELDS -> STRING
             $fields_list = implode(', ', $fields);
 
-            //REQUEST
+            // REQUEST
             return $this->request('UPDATE '.$this->table.' SET '.$fields_list.' WHERE id = ?',$values);
         }
 
-        //DELETE
+        // DELETE
         public function delete(int $id) {
 
             return $this->request("DELETE FROM {$this->table} WHERE id = ?", [$id]);
         }
 
-        //REQUEST//
+        // REQUEST //
         public function request(string $sql, array $attributs = null) {
 
-            //INSTANCE -> DB
+            // INSTANCE -> DB
             $this->db = Db::getInstance();
 
-            //SI ATTRIBUTS
+            // SI ATTRIBUTS
             if($attributs !== null) {
                 //REQUETE
                 $query = $this->db->prepare($sql);
@@ -115,20 +117,20 @@
                 
             } else {
 
-                //REQUETE SIMPLE
+                // REQUETE SIMPLE
                 return $this->db->query($sql);
             }
         }
 
-        //HYDRATE//
-        public function hydrate(array $donnees) {
+        // HYDRATE //
+        public function hydrate($donnees) {
 
             foreach($donnees as $key => $value) {
-                //RECUP SETTER
+                // RECUP SETTER
                 $setter = 'set'.ucfirst($key);
-                //SI SETTER EXIST
+                // SI SETTER EXIST
                 if(method_exists($this, $setter)) {
-                    //CALL SETTER
+                    // APPEL DU SETTER
                     $this->$setter($value);
                 }
             }

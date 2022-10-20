@@ -11,7 +11,7 @@
             return $this->formCode;
         }
 
-        public function validate(array $form, array $fields)
+        public static function validate(array $form, array $fields)
         {
             foreach($fields as $field) {
                 // SI ABSENT OU VIDE
