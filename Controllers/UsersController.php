@@ -3,6 +3,7 @@
     namespace App\Controllers;
 
     use App\Core\Form;
+    use App\Models\UsersModel;
 
     class UsersController extends Controller
     {
@@ -32,7 +33,14 @@
                 $email = strip_tags($_POST['email']);
                 $pass = password_hash($_POST['password'], PASSWORD_ARGON2I);
 
-                echo $pass;
+                // ON HYDRATE USER
+                $user = new UsersModel;
+
+                $user->setEmail($email)
+                     ->setPassword($pass);
+                
+                // ON STOCKE USER
+                $user->create();
 
             }
 
