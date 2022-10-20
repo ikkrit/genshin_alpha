@@ -10,6 +10,42 @@
         // CONNEXION UTILISATEURS
         public function login()
         {
+            // ON VERIFIE SI LE FORMULAIRE ESR COMPLET
+            if(Form::validate($_POST, ['email', 'password'])) {
+
+                // LE FORMULAIRE EST COMPLET
+                // CHERCHER DANS BDD DE L'UTLISATEUR AVEC LE MAIL
+                $userModel = new UsersModel;
+                $userArray = $userModel->findOneByEmail(strip_tags($_POST['email']));
+
+                // SI L'UTILISATEUR N'EXISTE PAS
+                if(!$userArray) {
+                    // MESSAGE ERREUR SESSION
+                    $_SESSION['erreur'] = 'L\'adresse e-mail et/ou le mot de passe est incorrect';
+                    header('Location: /users/login');
+                    exit;
+                }
+
+                // SI UTILISATEUR EXISTE
+                $user = $userModel->hydrate($userArray);
+
+                // VERIFICATION PASSWORD
+                if(password_verify($_POST['password'], $user->getPassword())) {
+                    // PASSWORD CORRECT
+                    // ON CREE LA SESSION
+                    $user->setSession();
+                    header('Location: /');
+                    exit;
+
+                } else {
+                    // PASSWORD INCORRECT
+                    $_SESSION['erreur'] = 'L\'adresse e-mail et/ou le mmot de passe est incorrect';
+                    header('Location: /users/login');
+                    exit;
+                }
+            }
+            
+
             $form = new Form;
 
             $form->startForm()
@@ -20,7 +56,7 @@
                  ->addButton('Me connecter', ['class' => 'btn btn-primary'])
                  ->endForm();
 
-            $this->render('users/login',['loginForm' => $form->create()],'home');
+            $this->render('users/login',['loginForm' => $form->create()]);
         }
 
         // INSCRIPTION DES UTILISATEURS
@@ -55,6 +91,13 @@
                   ->endForm();
 
             $this->render('users/register', ['registerForm' => $form->create()]);
+        }
+
+        // DECONNEXION DE L'UTILISATEUR
+        public function logout() {
+            unset($_SESSION['user']);
+            header('Location: '.$_SERVER['HTTP_REFERER']);
+            exit;
         }
     }
 

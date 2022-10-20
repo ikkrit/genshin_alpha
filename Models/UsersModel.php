@@ -20,6 +20,15 @@
             return $this->request("SELECT * FROM {$this->table} WHERE email = ?", [$email])->fetch();
         }
 
+        // CREER LA SESSION UTILISATEUR
+        public function setSession()
+        {
+             $_SESSION['user'] = [
+                'id' => $this->id,
+                'email' => $this->email
+             ];
+        }
+
 
         public function getId()
         {

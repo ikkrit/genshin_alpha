@@ -18,7 +18,8 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                <ul class="navbar-nav me-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="/">Accueil</a>
                     </li>
@@ -26,10 +27,24 @@
                         <a class="nav-link" href="/annonces">Liste des annonces</a>
                     </li>
                 </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
+
+                <ul class="navbar-nav ml-auto">
+
+                    <?php if(isset($_SESSION['user']) && !empty($_SESSION['user']['id'])): ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/users/profil">Profil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/users/logout">Déconnexion</a>
+                        </li>
+                    <?php else: ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/users/login">Connexion</a>
+                        </li>
+                    <?php endif; ?>
+
+                </ul>
+
             </div>
         </div>
     </nav>

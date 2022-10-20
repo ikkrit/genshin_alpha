@@ -12,7 +12,10 @@
     {
         public function start()
         {
-            // RECUP URL
+            // ON DEMARRE LA SESSION
+            session_start();
+
+            // RECUPERATION URL
             $uri = $_SERVER['REQUEST_URI'];
 
             // VERIF URI ET SI /
