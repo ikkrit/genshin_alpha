@@ -68,7 +68,7 @@
                 return $this->user_id;
         }
 
-        public function setUser_id(int $user_id)
+        public function setUser_id(int $user_id): self
         {
                 $this->user_id = $user_id;
 

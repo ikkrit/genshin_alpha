@@ -40,7 +40,7 @@
                 } else {
 
                     // ON AJOUTE ATTRIBUTE='value'
-                    $str .= " $attribute='$value'";
+                    $str .= " $attribute=\"$value\"";
                 }
             }
             return $str;
@@ -112,7 +112,7 @@
 
             // ON AJOUTE LES OPTIONS
             foreach($option as $value => $text) {
-                $this->formCode .= "<option value='$value'>$text</option>";
+                $this->formCode .= "<option value=\"$value\">$text</option>";
             }
 
             // ON FERME LE SELECT
