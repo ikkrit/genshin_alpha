@@ -9,6 +9,7 @@
         protected $description;
         protected $created_at;
         protected $actif;
+        protected $user_id;
 
 
         public function __construct()
@@ -60,6 +61,18 @@
         public function setActif($actif) {
             $this->actif = $actif;
             return $this;
+        }
+
+        public function getUser_id(): int
+        {
+                return $this->user_id;
+        }
+
+        public function setUser_id(int $user_id)
+        {
+                $this->user_id = $user_id;
+
+                return $this;
         }
     }
 

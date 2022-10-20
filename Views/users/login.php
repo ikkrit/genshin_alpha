@@ -6,5 +6,3 @@
 
 <h1>Connexion</h1>
 <?=$loginForm;?>
-
-<?php var_dump($_SESSION); ?>
