@@ -40,6 +40,25 @@
             }
         }
 
+        public function activeAnnonce(int $id)
+        {
+            if($this->isAdmin()) {
+
+                $annoncesModel = new AnnoncesModel;
+
+                $annonceArray = $annoncesModel->find($id);
+
+                if($annonceArray) {
+
+                    $annonce = $annoncesModel->hydrate($annonceArray);
+
+                    $annonce->setActif($annonce->getActif() ? 0 :1);
+
+                    $annonce->update();
+                }
+            }
+        }
+
         private function isAdmin()
         {
             // ON VERIFIE SI ON EST CONNECTER ET SI "ROLE_ADMIN" EST DANS NOS RÔLES

@@ -1,3 +1,5 @@
+// Requete du switch "active" (admin/annonces.php)
+
 window.onload = () => {
     let buttons = document.querySelectorAll(".form-check-input");
 
