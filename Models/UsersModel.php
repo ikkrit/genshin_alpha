@@ -7,6 +7,7 @@
         protected $id;
         protected $email;
         protected $password;
+        protected $roles;
 
         public function __construct()
         {
@@ -25,7 +26,8 @@
         {
              $_SESSION['user'] = [
                 'id' => $this->id,
-                'email' => $this->email
+                'email' => $this->email,
+                'roles' => $this->roles
              ];
         }
 
@@ -66,6 +68,21 @@
                 return $this;
         }
 
+        public function getRoles(): array
+        {
+                $roles = $this->roles;
+
+                $roles[] = 'ROLE_USER';
+
+                return array_unique($roles);
+        }
+
+        public function setRoles($roles)
+        {
+                $this->roles = json_decode($roles);
+
+                return $this;
+        }
     }
 
 ?>
