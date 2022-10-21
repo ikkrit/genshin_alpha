@@ -6,7 +6,7 @@
     {
         public function index()
         {
-            $this->render('main/index', [], 'home');
+            $this->render('main/main', [], 'home');
         }
     }
 

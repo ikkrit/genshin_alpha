@@ -15,13 +15,13 @@
             // CONSERVATION MEMOIRE A PARTIR DE CE POINT
         
             // CHEMIN VIEWS
-            require_once ROOT.'/Views/'.$file.'.php';
+            require_once ROOT.'/Views/'.$file.'.html.php';
 
             // TRANSFERE BUFFER -> CONTENT
             $content = ob_get_clean();
 
             // TEMPLATE PAGE
-            require_once ROOT.'/Views/'.$template.'.php';
+            require_once ROOT.'/Views/'.$template.'.html.php';
 
         }
     }

@@ -93,8 +93,13 @@
         }
 
         // MODIFIER UNE ANNONCE
-        public function modify(int $id)
+        public function modify($id = null)
         {
+            if($id == null || !is_int($id)) {
+                $_SESSION['erreur'] = "Vous n'avez pas accès à cette page";
+                header('Location: /annonces');
+                exit;
+            }
             // ON VERIFIE SI L'UTILISATEUR EST CONNECTER
             if(isset($_SESSION['user']) && !empty($_SESSION['user']['id'])) {
                 // ON VERIFIE SI L'ANNONCE EXISTE DANS LA BASE
