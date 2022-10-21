@@ -1,4 +1,5 @@
 // Requete du switch "active" (admin/annonces.php)
+// Methode "activeAnnonce" de AdminController
 
 window.onload = () => {
     let buttons = document.querySelectorAll(".form-check-input");

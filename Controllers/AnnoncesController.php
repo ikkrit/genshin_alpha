@@ -113,10 +113,10 @@
                     exit;
                 }
 
-                // ON VERIFIE SI L'UTILISATEUR EST PROPRIETAIRE DE L'ANNONCE
+                // ON VERIFIE SI L'UTILISATEUR EST PROPRIETAIRE DE L'ANNONCE OU ADMIN
                 if($annonce->user_id !== $_SESSION['user']['id']) {
                     if(!in_array('ROLE_ADMIN', $_SESSION['user']['roles'])) {
-                        
+
                         $_SESSION['erreur'] = "Vous n'avez pas accès à cette page";
                         header('Location: /annonces');
                         exit;
