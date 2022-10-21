@@ -28,6 +28,18 @@
             }
         }
 
+        public function deleteAnnonce(int $id)
+        {
+            if($this->isAdmin()) {
+                
+                $annonce = new AnnoncesModel;
+
+                $annonce->delete($id);
+
+                header('Location: '.$_SERVER['HTTP_REFERER']);
+            }
+        }
+
         private function isAdmin()
         {
             // ON VERIFIE SI ON EST CONNECTER ET SI "ROLE_ADMIN" EST DANS NOS RÔLES

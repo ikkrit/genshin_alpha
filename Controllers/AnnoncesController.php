@@ -115,9 +115,12 @@
 
                 // ON VERIFIE SI L'UTILISATEUR EST PROPRIETAIRE DE L'ANNONCE
                 if($annonce->user_id !== $_SESSION['user']['id']) {
-                    $_SESSION['user'] = "Vous n'avez pas accès à cette page";
-                    header('Location: /annonces');
-                    exit;
+                    if(!in_array('ROLE_ADMIN', $_SESSION['user']['roles'])) {
+                        
+                        $_SESSION['erreur'] = "Vous n'avez pas accès à cette page";
+                        header('Location: /annonces');
+                        exit;
+                    }
                 }
 
                 // ON TRAITE LE FORMULAIRE
