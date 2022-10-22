@@ -30,6 +30,7 @@
 
         <?= $content;?>
     </div>
+    
     <div class="text-center">
         <a href="/annonces" class="btn btn-primary">Voir la liste des annonces</a>
     </div>

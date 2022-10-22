@@ -1,0 +1,126 @@
+/* 
+    Author: Ikkrit;
+    Theme: Genshin Impact;
+    version: 1;
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    --color-white: #f4f4f4;
+    --color-light: rgba(255, 255, 255, 0.7);
+    --color-black: #000;
+    --color-bg-master: #1D2327;
+    --color-bg-gray-light: #585E6C;
+
+    --container-width-lg: 80%;
+    --container-width-md: 90%;
+    --container-width-sm: 94%;
+
+    --transition: all 400ms ease;
+    --radius: 5px;
+    --shadow-box: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--color-white);
+}
+
+
+/*====================================== NAVBAR ======================================*/
+
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 15px 25px;
+    background: #fafafa;
+    box-shadow: inset 0px -1px 0px #c5c5c6;
+}
+
+.navbar__icon {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+.navbar__icon span {
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 10px;
+    color: #333;
+}
+
+.navbar__icon img {
+    width: 40px;
+}
+
+.navbar__hamburger {
+    display: none;
+}
+
+.navlinks__container a {
+    display: inline-block;
+    position: relative;
+    margin: 0 10px;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #414141;
+}
+
+.navlinks__container a::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    width: 100%;
+    height: 1px;
+    transform: scaleX(0);
+    transform-origin: left;
+    background: #333;
+    transition: transform 0.3s ease-out;
+}
+
+.navlinks__container a:hover::after {
+    transform: scaleX(1);
+}
+
+.navbar__authentication {
+    margin-left: auto;
+}
+
+.sign__btns button {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    min-width: 90px;
+    padding: 10px 5px;
+    margin: 0 5px;
+    border-radius: var(--radius);
+    cursor: pointer;
+    border: none;
+}
+
+.sign__btns button:nth-child(2) {
+    border: none;
+    background: rgba(146, 195, 238, 0.718);
+}
+
+.navbar img {
+    width: 20px;
+}
