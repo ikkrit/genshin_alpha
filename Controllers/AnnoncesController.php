@@ -14,7 +14,7 @@
             // RECHERCHE ANNONCES
             $annonces = $annoncesModel->findBy(['actif' => 1]);
             // GENERATE VIEWS
-            $this->render('annonces/index', compact('annonces'));
+            $this->render('annonces/annonces_index', compact('annonces'));
         }
 
         public function read(int $id)
@@ -24,7 +24,7 @@
             // CHERCHER 1 ANNONCES
             $annonce = $annoncesModel->find($id);
             // ENVOIE A LA VUE
-            $this->render('annonces/read', compact('annonce'));
+            $this->render('annonces/annonces_read', compact('annonce'));
         }
 
         // AJOUTER UNE ANNONCE
@@ -81,7 +81,7 @@
                      ->addButton('Ajouter', ['class' => 'btn btn-primary'])
                      ->endForm();
 
-                $this->render('annonces/add', ['form' => $form->create()]);
+                $this->render('annonces/annonces_add', ['form' => $form->create()]);
 
 
             } else {

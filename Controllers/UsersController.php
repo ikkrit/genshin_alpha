@@ -10,7 +10,7 @@
         // CONNEXION UTILISATEURS
         public function login()
         {
-            // ON VERIFIE SI LE FORMULAIRE ESR COMPLET
+            // ON VERIFIE SI LE FORMULAIRE EST COMPLET
             if(Form::validate($_POST, ['email', 'password'])) {
 
                 // LE FORMULAIRE EST COMPLET
@@ -22,7 +22,7 @@
                 if(!$userArray) {
                     // MESSAGE ERREUR SESSION
                     $_SESSION['erreur'] = 'L\'adresse e-mail et/ou le mot de passe est incorrect';
-                    header('Location: /users/login');
+                    header('Location: /users/users_login');
                     exit;
                 }
 
@@ -40,7 +40,7 @@
                 } else {
                     // PASSWORD INCORRECT
                     $_SESSION['erreur'] = 'L\'adresse e-mail et/ou le mmot de passe est incorrect';
-                    header('Location: /users/login');
+                    header('Location: /users/users_login');
                     exit;
                 }
             }
@@ -56,7 +56,7 @@
                  ->addButton('Me connecter', ['class' => 'btn btn-primary'])
                  ->endForm();
 
-            $this->render('users/login',['loginForm' => $form->create()]);
+            $this->render('users/users_login',['loginForm' => $form->create()]);
         }
 
         // INSCRIPTION DES UTILISATEURS
@@ -90,7 +90,30 @@
                   ->addButton('M\'inscrire', ['class' => 'btn btn-primary'])
                   ->endForm();
 
-            $this->render('users/register', ['registerForm' => $form->create()]);
+            $this->render('users/users_register', ['registerForm' => $form->create()]);
+        }
+
+        // PROFIL DE L'UTILISATEUR
+        public function profil() {
+            
+            // ON VERIFIE SI L'UTILISATEUR EST CONNECTER
+            if(isset($_SESSION['user']) && !empty($_SESSION['user']['id'])) {
+
+                $id = strip_tags($_SESSION['user']['id']);
+
+                // INSTANCE MODEL
+                $usersModel = new UsersModel;
+                // CHERCHER LE PROFIL
+                $profils = $usersModel->find($id);
+                // ENVOIE A LA VUE
+                $this->render('users/users_profil', ['profils' => $profils]);
+
+            } else {
+                // L'UTILISATEUR N'EST PAS CONNECTER
+                $_SESSION['erreur'] = "Vous devez être connecté(e) pour accéder à cette page";
+                header('Location: /users/login');
+                exit;
+            }
         }
 
         // DECONNEXION DE L'UTILISATEUR

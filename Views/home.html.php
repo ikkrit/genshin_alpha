@@ -30,15 +30,11 @@
 
         <?= $content;?>
     </div>
+    <div class="text-center">
+        <a href="/annonces" class="btn btn-primary">Voir la liste des annonces</a>
+    </div>
 
 <!------------------------- FOOTER ------------------------->
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+<?php require_once ROOT.'/Views/layouts/footer.html.php';?>
 
-</body>
-
-</html>
-
-<!--<div class="text-center">
-        <a href="/annonces" class="btn btn-primary">Voir la liste des annonces</a>
-    </div>-->
