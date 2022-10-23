@@ -20,3 +20,10 @@ new ResizeObserver(entries => {
         navLinksContainer.style.transition = "none"
     }
 }).observe(document.body);
+
+// STICKY
+
+window.addEventListener("scroll", () => {
+    const navbar = document.querySelector(".navbar");
+    navbar.classList.toggle("sticky", window.scrollY > 0);
+});
