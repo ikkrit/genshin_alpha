@@ -25,7 +25,7 @@
     </div>
 
     <div class="navbar__authentication">
-        <a href="#" class="user__toggler" aria-label="Sign in page">
+        <a href="#" class="sign__user" aria-label="Sign in page">
             <img src="/assets/img/icons/man-user.svg" alt="icon user">
         </a>
         <div class="sign__btns">

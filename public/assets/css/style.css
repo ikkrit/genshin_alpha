@@ -121,6 +121,111 @@ body {
     background: rgba(146, 195, 238, 0.718);
 }
 
-.navbar img {
-    width: 20px;
+.sign__user {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    .navbar {
+        padding: 15px 20px;
+        position: relative;
+    }
+    .navbar__icon {
+        order: 2;
+        margin: 0 auto;
+    }
+    .navbar__icon span {
+        font-size: 22px;
+    }
+    .main__navlinks {
+        order: 1;
+    }
+    .navbar__hamburger {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        border: none;
+        display: flex;
+        background: #fafafa;
+        align-items: center;
+        position: relative;
+    }
+    .navbar__hamburger span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: #333;
+        position: absolute;
+        pointer-events: none;
+        transition: opacity 0.3s 0.15s ease-out;
+    }
+    .navbar__hamburger span:nth-child(1),
+    .navbar__hamburger span:nth-child(3) {
+        transition: transform 0.3s ease-out;
+    }
+    .navbar__hamburger span:nth-child(1) {
+        transform: translateY(7px);
+    }
+    .navbar__hamburger span:nth-child(3) {
+        transform: translateY(-7px);
+    }
+    .navbar__hamburger.open span:nth-child(1) {
+        transform: translate(0) rotate(135deg);
+    }
+    .navbar__hamburger.open span:nth-child(2) {
+        opacity: 0;
+        transition: opacity 0s ease-out;
+    }
+    .navbar__hamburger.open span:nth-child(3) {
+        transform: translate(0) rotate(-135deg);
+    }
+    .navlinks__container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        position: absolute;
+        background: #fafafa;
+        top: 100%;
+        left: 0;
+        height: 100vh;
+        padding: 15px 50px 15px 20px;
+        border-right: 1px solid #c5c5c6;
+        transform: translate(-100%);
+    }
+    .open {
+        transform: translate(0%);
+    }
+    .navlinks__container a {
+        font-size: 18px;
+        margin: 10px 0;
+    }
+    .navbar__authentication {
+        order: 3;
+        margin-left: 0;
+    }
+    .sign__btns {
+        display: none;
+    }
+    .sign__user {
+        display: block;
+        cursor: pointer;
+        border: none;
+    }
+    .sign__user img {
+        width: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    .navbar__icon img {
+        width: 30px;
+    }
+    .navbar__icon span {
+        font-size: 20px;
+    }
+}
+
+.header {
+    height: 100vh;
+    background-color: red;
 }
