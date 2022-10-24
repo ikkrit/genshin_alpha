@@ -30,6 +30,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -272,6 +273,95 @@ a {
     .navbar__icon span {
         font-size: 20px;
     }
+}
+
+
+/*====================================== HEADER ======================================*/
+
+
+.header {
+    min-height: 100vh;
+    background: linear-gradient(#2b1055, #7597de);
+    max-width: 1600px;
+    margin: auto;
+    z-index: 999;
+    overflow-x: hidden;
+}
+
+.header__content {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__content::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, #1c0522, transparent);
+    z-index: 1000;
+}
+
+.header__content img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+#moon {
+    mix-blend-mode: screen;
+}
+
+#mountains_front {
+    z-index: 10;
+}
+
+#header__text {
+    position: absolute;
+    right: -350px;
+    color: #fff;
+    white-space: nowrap;
+    font-size: 7.5vw;
+    z-index: 9;
+}
+
+#btn_header {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 30px;
+    border-radius: 40px;
+    background: #fff;
+    color: #2b1055;
+    font-size: 1.5em;
+    z-index: 9;
+    transform: translateY(100px);
+}
+
+.header__section {
+    position: relative;
+    padding: 100px;
+    background: #1c0522;
+}
+
+.header__section h2 {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.header__section p {
+    font-size: 1em;
+    color: #fff;
 }
 
 
