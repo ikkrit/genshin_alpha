@@ -2,15 +2,15 @@
 
 <!-------------------------- HEAD -------------------------->
 
-<?php require_once ROOT.'/Views/layouts/head.html.php';?>
+<?php require_once ROOT.'/Views/layouts/_head.html.php';?>
 
 <!------------------------- NAVBAR ------------------------->
 
-<?php require_once ROOT.'/Views/layouts/nav.html.php';?>
+<?php require_once ROOT.'/Views/layouts/_nav.html.php';?>
 
 <!------------------------- HEADER ------------------------->
 
-<?php require_once ROOT.'/Views/layouts/header.html.php';?>
+<?php require_once ROOT.'/Views/layouts/_header.html.php';?>
 
 <!-------------------------- MAIN -------------------------->
 
@@ -37,5 +37,5 @@
 
 <!------------------------- FOOTER ------------------------->
 
-<?php require_once ROOT.'/Views/layouts/footer.html.php';?>
+<?php require_once ROOT.'/Views/layouts/_footer.html.php';?>
 

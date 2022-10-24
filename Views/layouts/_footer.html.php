@@ -2,7 +2,7 @@
 
 <footer class="footer container">
 
-    <div class="footer__contain">
+    <div class="footer__content">
 
         <div class="footer__row">
 
