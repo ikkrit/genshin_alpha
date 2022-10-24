@@ -58,6 +58,7 @@ a {
     padding: 30px 25px;
     background: #fafafa;
     box-shadow: inset 0px -1px 0px #c5c5c6;
+    z-index: 100;
 }
 
 .navbar.sticky {

@@ -1,8 +1,7 @@
-<?php $pages = "home";?>
-
 <!-------------------------- HEAD -------------------------->
 
 <?php require_once ROOT.'/Views/layouts/_head.html.php';?>
+
 
 <!------------------------- NAVBAR ------------------------->
 
@@ -13,8 +12,6 @@
 <?php require_once ROOT.'/Views/layouts/_header.html.php';?>
 
 <!-------------------------- MAIN -------------------------->
-
-    <div class="container">
 
         <?php if(!empty($_SESSION['erreur'])): ?>
             <div class="alert alert-danger" role="alert">
@@ -29,13 +26,12 @@
         <?php endif; ?>
 
         <?= $content;?>
-    </div>
-    
-    <div class="text-center">
-        <a href="/annonces" class="btn btn-primary">Voir la liste des annonces</a>
-    </div>
 
+    
 <!------------------------- FOOTER ------------------------->
 
 <?php require_once ROOT.'/Views/layouts/_footer.html.php';?>
+
+    
+
 

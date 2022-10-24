@@ -6,7 +6,7 @@
     {
         public function index()
         {
-            $this->render('contact/contact', [], 'home');
+            $this->render('contact/contact', [], 'home', 'contact');
         }
     }
 

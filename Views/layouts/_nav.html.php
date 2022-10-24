@@ -20,7 +20,7 @@
             <a href="#">Services</a>
             <a href="#">Pricing</a>
             <a href="#">Community</a>
-            <a href="#">Contact</a>
+            <a href="/contact">Contact</a>
         </div>
 
     </div>

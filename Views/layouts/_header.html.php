@@ -1,4 +1,4 @@
-<header class="header">
+<header class="header container">
     <p>Header</p>
     <p>Header</p>
     <p>Header</p>
