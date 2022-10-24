@@ -16,7 +16,7 @@
         </button>
 
         <div class="navlinks__container">
-            <a href="#" aria-current="page">Home</a>
+            <a href="/main" aria-current="page">Home</a>
             <a href="#">Services</a>
             <a href="#">Pricing</a>
             <a href="#">Community</a>

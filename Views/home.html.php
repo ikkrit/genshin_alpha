@@ -2,14 +2,13 @@
 
 <?php require_once ROOT.'/Views/layouts/_head.html.php';?>
 
-
 <!------------------------- NAVBAR ------------------------->
 
 <?php require_once ROOT.'/Views/layouts/_nav.html.php';?>
 
 <!------------------------- HEADER ------------------------->
 
-<?php require_once ROOT.'/Views/layouts/_header.html.php';?>
+<?php if($page == 'home') require_once ROOT.'/Views/layouts/_header.html.php';?>
 
 <!-------------------------- MAIN -------------------------->
 
