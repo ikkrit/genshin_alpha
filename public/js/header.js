@@ -2,7 +2,7 @@
 
 let stars = document.getElementById('stars');
 let moon = document.getElementById('moon');
-let mountains_behind = document.getElementById('"mountains_behind');
+let mountains_behind = document.getElementById('mountains_behind');
 let text = document.getElementById('header__text');
 let btn = document.getElementById('btn_header');
 let mountains_front = document.getElementById('mountains_front');
@@ -17,4 +17,5 @@ window.addEventListener('scroll', () => {
     mountains_front.style.top = value * 0 + 'px';
     text.style.marginRight = value * 4 + 'px';
     text.style.marginTop = value * 1.5 + 'px';
+    btn.style.marginTop = value * 1.5 + 'px';
 });

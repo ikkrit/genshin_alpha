@@ -296,6 +296,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 .header__content::before {
@@ -362,6 +363,22 @@ a {
 .header__section p {
     font-size: 1em;
     color: #fff;
+}
+
+@media (max-width: 900px) {
+    .header {
+        max-height: 80vh;
+        overflow: hidden;
+        width: 900px
+    }
+}
+
+@media (max-width: 500px) {
+    .header {
+        max-height: 50vh;
+        overflow: hidden;
+        width: 500px
+    }
 }
 
 
