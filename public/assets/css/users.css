@@ -14,3 +14,37 @@
     background: url(/assets/img/back/back_inazuma.jpg);
     background-size: cover;
 }
+
+.register__container {
+    margin-top: 20px;
+    padding: 40px 100px;
+    background: #fff;
+    box-shadow: var(--shadow-box);
+    min-height: 300px;
+}
+
+.register__container form {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+}
+
+.register__container form input {
+    margin: 10px 0;
+}
+
+.register__container h1 {
+    color: #eb7371;
+    text-align: center;
+}
+
+.register__control {
+    border: none;
+    border-bottom: 1px solid var(--color-black);
+    background: var(--color-white-lg);
+}
+
+.btn__register {
+    width: 50%;
+    margin: auto;
+}

@@ -67,16 +67,38 @@
 
                 // LE FORMULAIRE EST VALIDE
                 $email = strip_tags($_POST['email']);
-                $pass = password_hash($_POST['password'], PASSWORD_ARGON2I);
+                $verif_pass = strip_tags($_POST['password']);
 
-                // ON HYDRATE USER
+                // VERIFICATION PASSWORD
+                if(strlen($verif_pass) <= 11 ) {
+                    $_SESSION['erreur'] = 'Le mot de passe est trop court';
+                    header('Location: /users/register');
+                    exit;
+                }
+
+                $pass = password_hash($verif_pass, PASSWORD_ARGON2I);
+
                 $user = new UsersModel;
 
+                // ON VERIFIE QUE L'UTILISATEUR EXISTE DEJA
+                $verif_email = $user->findOneByEmail($email);
+                if($verif_email) {
+                    // MESSAGE ERREUR SESSION
+                    $_SESSION['erreur'] = 'L\'adresse e-mail est deja utiliser';
+                    header('Location: /users/register');
+                    exit;
+                }
+
+                // ON HYDRATE USER
                 $user->setEmail($email)
                      ->setPassword($pass);
                 
                 // ON STOCKE USER
                 $user->create();
+
+                $_SESSION['message'] = 'Inscription valider, connectez vous';
+                header('Location: /users/login');
+                exit;
 
             }
 
@@ -85,12 +107,12 @@
             $form ->startForm()
                   ->addLabelFor('email', 'E-mail')
                   ->addInput('email', 'email', ['id' => 'email', 'class' => 'register__control'])
-                  ->addLabelFor('pass', 'Mot de passe :')
+                  ->addLabelFor('pass', 'Mot de passe (Minimum 12 caractères):')
                   ->addInput('password', 'password', ['id' => 'pass', 'class' => 'register__control'])
                   ->addButton('M\'inscrire', ['class' => 'btn__register'])
                   ->endForm();
 
-            $this->render('users/users_register', ['registerForm' => $form->create()],'default','users');
+            $this->render('users/users_register', ['registerForm' => $form->create()],'home','users');
         }
 
         // PROFIL DE L'UTILISATEUR

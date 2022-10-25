@@ -10,6 +10,7 @@
 
 :root {
     --color-white: #f4f4f4;
+    --color-white-lg: #F0FFF0;
     --color-light: rgba(255, 255, 255, 0.7);
     --color-black: #000;
     --color-bg-master: #1D2327;
@@ -45,6 +46,15 @@ body {
 
 a {
     text-decoration: none;
+}
+
+.message__text {
+   position: absolute;
+   display: block;
+   top: 15vh;
+   z-index: 12;
+   width: 100%;
+   text-align: center;
 }
 
 
