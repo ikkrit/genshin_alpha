@@ -40,7 +40,7 @@
                 } else {
                     // PASSWORD INCORRECT
                     $_SESSION['erreur'] = 'L\'adresse e-mail et/ou le mmot de passe est incorrect';
-                    header('Location: /users/users_login');
+                    header('Location: /users/login');
                     exit;
                 }
             }
@@ -84,13 +84,13 @@
 
             $form ->startForm()
                   ->addLabelFor('email', 'E-mail')
-                  ->addInput('email', 'email', ['id' => 'email', 'class' => 'form-control'])
+                  ->addInput('email', 'email', ['id' => 'email', 'class' => 'register__control'])
                   ->addLabelFor('pass', 'Mot de passe :')
-                  ->addInput('password', 'password', ['id' => 'pass', 'class' => 'form-control'])
-                  ->addButton('M\'inscrire', ['class' => 'btn btn-primary'])
+                  ->addInput('password', 'password', ['id' => 'pass', 'class' => 'register__control'])
+                  ->addButton('M\'inscrire', ['class' => 'btn__register'])
                   ->endForm();
 
-            $this->render('users/users_register', ['registerForm' => $form->create()]);
+            $this->render('users/users_register', ['registerForm' => $form->create()],'default','users');
         }
 
         // PROFIL DE L'UTILISATEUR

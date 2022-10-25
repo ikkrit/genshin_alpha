@@ -30,8 +30,16 @@
             <img src="/assets/img/icons/man-user.svg" alt="icon user">
         </a>
         <div class="sign__btns">
-            <button class="button">Sign In</button>
-            <button class="button">Sign Up</button>
+            <?php if(isset($_SESSION['user']) && !empty($_SESSION['user']['id'])): ?>
+                <?php if(isset($_SESSION['user']['roles']) && in_array('ROLE_ADMIN',$_SESSION['user']['roles'])): ?>
+                    <button class="sign__button"><a href="/admin">Admin</a></button>
+                <?php endif; ?>
+                    <button class="sign__button"><a href="/users/profil">Profil</a></button>
+                    <button class="sign__button"><a href="/users/logout">Déconnexion</a></button>
+            <?php else: ?>
+                    <button class="sign__button"><a href="/users/register">Inscription</a></button>
+                    <button class="sign__button"><a href="/users/login">Connection</a></button>
+            <?php endif; ?>
         </div>
 
     </div>

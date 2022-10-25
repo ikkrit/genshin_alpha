@@ -134,7 +134,7 @@ a {
     margin-left: auto;
 }
 
-.sign__btns button {
+.sign__btns .sign__button {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     min-width: 90px;
@@ -145,7 +145,7 @@ a {
     border: none;
 }
 
-.sign__btns button:nth-child(2) {
+.sign__btns .sign__button:nth-child(2) {
     border: none;
     background: rgba(146, 195, 238, 0.718);
 }
