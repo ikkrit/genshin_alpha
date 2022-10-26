@@ -22,7 +22,7 @@
                 if(!$userArray) {
                     // MESSAGE ERREUR SESSION
                     $_SESSION['erreur'] = 'L\'adresse e-mail et/ou le mot de passe est incorrect';
-                    header('Location: /users/users_login');
+                    header('Location: /users/login');
                     exit;
                 }
 
@@ -39,7 +39,7 @@
 
                 } else {
                     // PASSWORD INCORRECT
-                    $_SESSION['erreur'] = 'L\'adresse e-mail et/ou le mmot de passe est incorrect';
+                    $_SESSION['erreur'] = 'L\'adresse e-mail et/ou le mot de passe est incorrect';
                     header('Location: /users/login');
                     exit;
                 }
@@ -50,13 +50,13 @@
 
             $form->startForm()
                  ->addLabelFor('email', 'E-mail :')
-                 ->addInput('email', 'email', ['class' => 'form-control', 'id' => 'email'])
+                 ->addInput('email', 'email', ['class' => 'login__control', 'id' => 'email'])
                  ->addLabelFor('pass', 'Mot de passe :')
-                 ->addInput('password', 'password', ['id' => 'pass', 'class' => 'form-control'])
-                 ->addButton('Me connecter', ['class' => 'btn btn-primary'])
+                 ->addInput('password', 'password', ['id' => 'pass', 'class' => 'login__control'])
+                 ->addButton('Me connecter', ['class' => 'btn__control'])
                  ->endForm();
 
-            $this->render('users/users_login',['loginForm' => $form->create()]);
+            $this->render('users/users_login',['loginForm' => $form->create()],'home','users');
         }
 
         // INSCRIPTION DES UTILISATEURS
