@@ -34,11 +34,11 @@
                 <?php if(isset($_SESSION['user']['roles']) && in_array('ROLE_ADMIN',$_SESSION['user']['roles'])): ?>
                     <button class="sign__button"><a href="/admin">Admin</a></button>
                 <?php endif; ?>
-                    <button class="sign__button"><a href="/users/profil">Profil</a></button>
+                    <a href="/users/profil"><button class="sign__button">Profil</button></a>
                     <button class="sign__button"><a href="/users/logout">Déconnexion</a></button>
             <?php else: ?>
-                    <button class="sign__button"><a href="/users/register">Inscription</a></button>
-                    <button class="sign__button"><a href="/users/login">Connection</a></button>
+                    <a href="/users/register">  <button class="sign__button">Inscription</button></a>
+                    <a href="/users/login"><button class="sign__button">Connection</button></a>
             <?php endif; ?>
         </div>
 

@@ -1,4 +1,4 @@
-/*====================================== LOGIN & REGISTER ======================================*/
+/*=================== LOGIN & REGISTER & PROFIL =================== */
 
 .users {
     position: relative;
@@ -16,6 +16,11 @@
 }
 
 .login {
+    background: url(/assets/img/back/back_inazuma.jpg);
+    background-size: cover;
+}
+
+.profil {
     background: url(/assets/img/back/back_inazuma.jpg);
     background-size: cover;
 }
@@ -55,7 +60,16 @@
 }
 
 .btn__register,
-.login__register {
+.btn__control {
     width: 50%;
     margin: auto;
+    border: 1px solid transparent;
 }
+
+.btn__register:hover,
+.btn__control:hover {
+    border: 1px solid var(--color-black);
+    background: var(--color-white-lg);
+}
+
+/*====================================== PROFIL ======================================*/

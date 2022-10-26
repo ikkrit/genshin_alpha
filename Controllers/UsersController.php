@@ -53,7 +53,7 @@
                  ->addInput('email', 'email', ['class' => 'login__control', 'id' => 'email'])
                  ->addLabelFor('pass', 'Mot de passe :')
                  ->addInput('password', 'password', ['id' => 'pass', 'class' => 'login__control'])
-                 ->addButton('Me connecter', ['class' => 'btn__control'])
+                 ->addButton('Connexion', ['class' => 'btn__control'])
                  ->endForm();
 
             $this->render('users/users_login',['loginForm' => $form->create()],'home','users');
@@ -128,7 +128,7 @@
                 // CHERCHER LE PROFIL
                 $profils = $usersModel->find($id);
                 // ENVOIE A LA VUE
-                $this->render('users/users_profil', ['profils' => $profils]);
+                $this->render('users/users_profil', ['profils' => $profils], 'default', 'users');
 
             } else {
                 // L'UTILISATEUR N'EST PAS CONNECTER
