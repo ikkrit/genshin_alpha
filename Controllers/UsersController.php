@@ -63,9 +63,11 @@
         public function register()
         {
             // ON VERIFIE SI LE FORMULAIRE EST VALIDE
-            if(Form::validate($_POST, ['email', 'password'])) {
-
+            if(Form::validate($_POST, ['pseudo','first_name','last_name','email', 'password'])) {
                 // LE FORMULAIRE EST VALIDE
+                $pseudo = strip_tags($_POST['pseudo']);
+                $first_name = strip_tags($_POST['first_name']);
+                $last_name = strip_tags($_POST['last_name']);
                 $email = strip_tags($_POST['email']);
                 $verif_pass = strip_tags($_POST['password']);
 
@@ -90,7 +92,10 @@
                 }
 
                 // ON HYDRATE USER
-                $user->setEmail($email)
+                $user->setPseudo($pseudo)
+                     ->setFirst_name($first_name)
+                     ->setLast_name($last_name)
+                     ->setEmail($email)
                      ->setPassword($pass);
                 
                 // ON STOCKE USER
@@ -105,10 +110,16 @@
             $form = new Form;
 
             $form ->startForm()
+                  ->addLabelFor('text', 'pseudo')
+                  ->addInput('text', 'pseudo', ['id' => 'pseudo', 'class' => 'register__control','required' => 'required'])
+                  ->addLabelFor('text', 'prenom')
+                  ->addInput('text', 'first_name', ['id' => 'first_name', 'class' => 'register__control','required' => 'required'])
+                  ->addLabelFor('text', 'nom')
+                  ->addInput('text', 'last_name', ['id' => 'last_name', 'class' => 'register__control','required' => 'required'])
                   ->addLabelFor('email', 'E-mail')
-                  ->addInput('email', 'email', ['id' => 'email', 'class' => 'register__control'])
+                  ->addInput('email', 'email', ['id' => 'email', 'class' => 'register__control','required' => 'required'])
                   ->addLabelFor('pass', 'Mot de passe (Minimum 12 caractères):')
-                  ->addInput('password', 'password', ['id' => 'pass', 'class' => 'register__control'])
+                  ->addInput('password', 'password', ['id' => 'pass', 'class' => 'register__control','required' => 'required'])
                   ->addButton('M\'inscrire', ['class' => 'btn__register'])
                   ->endForm();
 
@@ -138,11 +149,32 @@
             }
         }
 
+        // EDITION DE L'AVATAR
+        public function editAvatar() {
+
+        }
+
+        // EDITION PROFIL DE L'UTILISATEUR
+        public function editProfil() {
+
+        }
+
         // DECONNEXION DE L'UTILISATEUR
         public function logout() {
             unset($_SESSION['user']);
             header('Location: '.$_SERVER['HTTP_REFERER']);
             exit;
+        }
+
+        // DELETE PROFIL
+        public function deleteUser($id) {
+            $user = new UsersModel;
+            $user->delete($id);
+            
+            $_SESSION['erreur'] = "Vous devez être connecté(e) pour accéder à cette page";
+            header('Location: /users/login');
+            exit;
+
         }
     }
 

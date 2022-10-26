@@ -4,9 +4,13 @@
 
     class UsersModel extends Model
     {
+        protected $pseudo;
+        protected $first_name;
+        protected $last_name;
         protected $id;
         protected $email;
         protected $password;
+        protected $avatar;
         protected $roles;
 
         public function __construct()
@@ -31,6 +35,41 @@
              ];
         }
 
+        public function getPseudo()
+        {
+                return $this->pseudo;
+        }
+
+        public function setPseudo($pseudo)
+        {
+                $this->pseudo = $pseudo;
+
+                return $this;
+        }
+
+        public function getFirst_name()
+        {
+                return $this->first_name;
+        }
+
+        public function setFirst_name($first_name)
+        {
+                $this->first_name = $first_name;
+
+                return $this;
+        }
+
+        public function getLast_name()
+        {
+                return $this->last_name;
+        }
+
+        public function setLast_name($last_name)
+        {
+                $this->last_name = $last_name;
+
+                return $this;
+        }
 
         public function getId()
         {
@@ -68,6 +107,18 @@
                 return $this;
         }
 
+        public function getAvatar()
+        {
+                return $this->avatar;
+        }
+
+        public function setAvatar($avatar)
+        {
+                $this->avatar = $avatar;
+
+                return $this;
+        }
+
         public function getRoles(): array
         {
                 $roles = $this->roles;
@@ -83,6 +134,7 @@
 
                 return $this;
         }
+
     }
 
 ?>

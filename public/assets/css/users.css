@@ -15,11 +15,6 @@
     background-size: cover;
 }
 
-.login {
-    background: url(/assets/img/back/back_inazuma.jpg);
-    background-size: cover;
-}
-
 .profil {
     background: url(/assets/img/back/back_inazuma.jpg);
     background-size: cover;
@@ -73,3 +68,43 @@
 }
 
 /*====================================== PROFIL ======================================*/
+
+.login {
+    background: url(/assets/img/back/back_inazuma.jpg);
+    background-size: cover;
+}
+
+.container__profil {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin-top: 20px;
+    padding: 40px 100px;
+    background: #fff;
+    box-shadow: var(--shadow-box);
+    min-height: 400px;
+    min-width: 400px;
+}
+
+.container__profil h1 {
+    text-align: center;
+    font-size: 50px;
+}
+
+.container__profil-box {
+    display: flex;
+}
+
+.profil__box-text {
+    padding: 20px;
+    width: 60%;
+}
+
+.profil__box-img {
+    width: 40%;
+}
+
+.profil__box-img img {
+    width: 100%;
+    object-fit: cover;
+}
