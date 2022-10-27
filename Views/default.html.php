@@ -1,4 +1,4 @@
-<?php require_once ROOT.'/Views/components/layouts/_head.html.php';?>
+<?php require_once ROOT.'/Views/layouts/_head.html.php';?>
 
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
@@ -69,4 +69,4 @@
 
 <!------------------------- FOOTER ------------------------->
 
-<?php require_once ROOT.'/Views/components/layouts/_footer.html.php';?>
+<?php require_once ROOT.'/Views/layouts/_footer.html.php';?>
