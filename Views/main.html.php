@@ -5,12 +5,6 @@
 
         <div class="scene__moon"></div>
         <img src="/assets/img/main/forest.png" class="scene__forest" alt="forest">
-        <img src="/assets/img/main/cloud1.png" class="scene__cloud1" alt="cloud">
-        <img src="/assets/img/main/cloud2.png" class="scene__cloud2" alt="cloud">
-        <img src="/assets/img/main/cloud3.png" class="scene__cloud3" alt="cloud">
-        <img src="/assets/img/main/cloud1.png" class="scene__cloud4" alt="cloud">
-        <img src="/assets/img/main/cloud2.png" class="scene__cloud5" alt="cloud">
-        <img src="/assets/img/main/cloud3.png" class="scene__cloud6" alt="cloud">
 
     </div>
 

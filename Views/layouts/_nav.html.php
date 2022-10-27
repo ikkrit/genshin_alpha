@@ -16,10 +16,10 @@
         </button>
 
         <div class="navlinks__container">
-            <a href="/main" aria-current="page">Home</a>
-            <a href="#">Services</a>
-            <a href="#">Pricing</a>
-            <a href="#">Community</a>
+            <a href="/home" aria-current="page">Home</a>
+            <a href="#">Le jeu</a>
+            <a href="#">Le Monde</a>
+            <a href="#">Hoyoverse</a>
             <a href="/contact">Contact</a>
         </div>
 

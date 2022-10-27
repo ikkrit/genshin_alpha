@@ -11,6 +11,9 @@
         protected $character_image;
         protected $character_back;
         protected $character_build;
+        protected $created_at;
+        protected $actif;
+        protected $user_id;
 
 
         public function __construct()
@@ -99,6 +102,42 @@
         public function setCharacter_build($character_build)
         {
                 $this->character_build = $character_build;
+
+                return $this;
+        }
+
+        public function getCreated_at()
+        {
+                return $this->created_at;
+        }
+
+        public function setCreated_at($created_at)
+        {
+                $this->created_at = $created_at;
+
+                return $this;
+        }
+
+        public function getActif()
+        {
+                return $this->actif;
+        }
+
+        public function setActif($actif)
+        {
+                $this->actif = $actif;
+
+                return $this;
+        }
+
+        public function getUser_id()
+        {
+                return $this->user_id;
+        }
+
+        public function setUser_id($user_id)
+        {
+                $this->user_id = $user_id;
 
                 return $this;
         }

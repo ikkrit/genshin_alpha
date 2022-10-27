@@ -22,18 +22,7 @@
     background: #fff;
     border-radius: 50%;
     z-index: 1000;
-}
-
-.scene__moon:after {
-    content: '';
-    position: absolute;
-    top: -15px;
-    left: 15px;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background: linear-gradient(#111425,#3751e0);
-    background-attachment: fixed;
+    box-shadow: rgba(255, 255, 255, 0.8) 0px 10px 24px;
 }
 
 .scene__forest {
@@ -66,7 +55,7 @@
     }
 }
 
-.scene__cloud1 {
+/*.scene__cloud1 {
     position: absolute;
     top: 0;
     left: 0;
@@ -130,4 +119,4 @@
     100% {
         transform: translateX(400%) scale(1.5);
     }
-}
+}*/
