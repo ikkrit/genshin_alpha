@@ -22,7 +22,7 @@
             // INSTANCE MODEL
             $annoncesModel = new AnnoncesModel;
             // CHERCHER 1 ANNONCES
-            $annonce = $annoncesModel->find($id);
+            $annonce = $annoncesModel->find($id,'id');
             // ENVOIE A LA VUE
             $this->render('annonces/annonces_read', compact('annonce'));
         }
@@ -108,7 +108,7 @@
                 $annoncesModel = new AnnoncesModel;
 
                 // ON CHERCHE L'ANNONCE AVEC L'ID $id
-                $annonce = $annoncesModel->find($id);
+                $annonce = $annoncesModel->find($id, 'id');
 
                 // SI L'ANNONCE N'EXISTE PAS, ON RETOURNE A LA LISTE DES ANNONCES
                 if(!$annonce) {

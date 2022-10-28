@@ -7,6 +7,7 @@
         <img src="/assets/img/main/forest.png" class="scene__forest" alt="forest">
 
     </div>
+    <h2><a href="/home">Home</a></h2>
 
     <script type="text/javascript">
         let stars = () => {

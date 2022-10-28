@@ -40,9 +40,9 @@
         }
 
         // FIND //
-        public function find(int $id) {
+        public function find(int $id, string $id_name) {
 
-            return $this->request("SELECT * FROM {$this->table} WHERE id = $id")->fetch();
+            return $this->request("SELECT * FROM {$this->table} WHERE $id_name = $id")->fetch();
         }
 
         // $USER->CREATE($USER) //
