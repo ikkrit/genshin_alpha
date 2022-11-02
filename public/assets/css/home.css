@@ -1,0 +1,460 @@
+/*=========================== CATEGORY ===========================*/
+
+
+.categories {
+    margin: 1rem;
+}
+
+.categories__present {
+    display: flex;
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 98%, rgba(255,255,255,0.4) 100%), url(../img/cards/sumeru_back.jpg);
+    padding: 1rem 0;
+    width: 100%;
+    height: 60vh;
+    color: var(--color-white);
+    margin-bottom: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.categories__present-box {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    width: 100%;
+    background: rgba(255,255,255,0.2);
+    padding: 1rem;
+}
+
+.categories__present-left {
+    height: 400px;
+}
+
+.categories__present-right {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.right__box {
+    width: 60%;
+    background: var(--color-bg-master);
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid var(--color-white);
+    margin: 1rem 0;
+    border-radius: var(--radius);
+    color: var(--color-black);
+    box-shadow: var(--shadow-box);
+}
+
+.right__box:hover {
+    margin-left: 1rem;
+    transition: var(--transition);
+}
+
+.right__box a {
+    color: var(--color-white);
+}
+
+.category__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+}
+
+.category {
+    box-shadow: var(--shadow-box);
+}
+
+.category__card {
+    height: 500px;
+    margin: 50px;
+    box-shadow: var(--shadow-box);
+    overflow: hidden;
+    border: 1px solid white;
+}
+
+.category__card img {
+    height: 500px;
+    width: 350px;
+    object-fit: cover;
+}
+
+.category__intro {
+    position: relative;
+    height: 70px;
+    width: 350px;
+    padding: 6px;
+    bottom: 70px;
+    box-sizing: border-box;
+    background: rgba(27, 27, 27, 0.5);
+    color: var(--color-white);
+    transition: var(--transition);
+}
+
+.category__intro:hover {
+    height: 100%;
+    bottom: 240px;
+    background: var(--color-bg-gray-light);
+}
+
+.category__intro-title {
+    display: flex;
+}
+
+.category__intro-title img {
+    height: 2rem;
+    margin: 10px 5px;
+    width: auto;
+    color: var(--color-white);
+}
+
+.category__intro h2 {
+    margin: 10px;
+    font-size: 2rem;
+}
+
+.category__intro p {
+    font-size: 1rem;
+    margin: 5px 20px;
+    visibility: hidden;
+    opacity: 0;
+    color: var(--color-white);
+}
+
+.category__intro:hover p {
+    visibility: visible;
+    opacity: 1;
+}
+
+.category__card:hover img {
+    transform: scale(1.1);
+    transition: var(--transition);
+}
+
+
+
+/*=========================== WORLDS ===========================*/
+
+
+.world__container {
+    display: grid;
+    gap: 1rem;
+    margin: 1rem;
+}
+
+.world {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    height: 250px;
+    background: var(--color-white);
+    cursor: pointer;
+    box-shadow: var(--shadow-box);
+}
+
+.world__box {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+.world__back-1 {
+    background: url(/assets/img/world/mondstat_back.jpg);
+    background-size: cover;
+}
+
+.world__back-2 {
+    background: url(../img/world/liyue_back.png);
+    background-size: cover;
+}
+
+.world__back-3 {
+    background: url(../img/world/unazuma_back.jpg);
+    background-size: cover;
+}
+
+.world__back-4 {
+    background: url(../img/world/sumeru_back.jpg);
+    background-size: cover;
+}
+
+.world__icon {
+    position: relative;
+}
+
+.world__box-text img {
+    width: 100px;
+}
+
+.world__box-text {
+    width: 50%;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+}
+
+.world__box-logo {
+    width: 50%;
+    text-align: center;
+    padding: 2rem;
+    
+}
+
+.world__box-logo img {
+    height: 120px;
+}
+
+.world__box-text h4 {
+    width: 50%;
+    margin: auto;
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: rgba(255,255,255,0.5);
+    border: 1px solid var(--color-bg-master);
+    border-radius: var(--radius);
+}
+
+.world__img img {
+    width: 80%;
+    padding: 10px;
+}
+
+.world__box p,
+.world__box .btn,
+.world__img {
+    display: none;
+}
+
+.world.openw {
+    height: 100%;
+}
+
+.world.openw .world__box-text {
+    display: block;
+    width: 70%;
+    margin: 5rem auto;
+    background: rgba(255,255,255,0.8);
+    text-align: center;
+    padding: 1rem;
+}
+
+.world.openw h4 {
+    display: block;
+    font-size: 2rem;
+    padding: 1rem;
+    border: 1px solid transparent;
+    background: transparent;
+}
+
+.world.openw p {
+    display: block;
+    padding: 1rem;
+    font-weight: 600;
+}
+
+.world.openw .btn {
+    display: inline-block;
+}
+
+.world.openw .world__box-logo {
+    display: none;
+}
+
+.world.openw .world__img {
+    display: block;
+}
+
+
+
+/*=========================== CHARACTERS ===========================*/
+
+
+.characters__container {
+    display: flex;
+    text-align: center;
+    padding: 1rem 0;
+    background: url(../img/cards/sumeru_player.jpg);
+    background-size: cover;
+    box-shadow: var(--shadow-box);
+
+}
+
+.character__tableau {
+    border-collapse: collapse;
+    min-width: 400px;
+    border: 3px solid var(--color-white);
+    box-shadow: var(--shadow-box);
+    margin: auto;
+    background: var(--color-white);
+}
+
+.characters__scroll {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    overflow-y: scroll;
+    /*overflow-x: scroll; responsive */
+    cursor: ns-resize;
+    padding: 1rem;
+}
+
+.character__img {
+    text-align: center;
+}
+
+.character__element {
+    display: flex;
+    flex-direction: column;
+}
+
+.character__element img {
+    width: 50px;
+    margin: auto;
+}
+
+thead tr {
+    background-color: var(--color-bg-gray-light);
+    color: var(--color-white);
+}
+
+th, td {
+    padding: 5px 20px;
+}
+
+tbody tr, td, th {
+    border: 1px solid var(--color-bg-gray-light);
+}
+
+
+/*=========================== HOYOVERSE ===========================*/
+
+
+
+.hoyoverse__container {
+    display: grid;
+    gap: 1rem;
+    margin: 1rem;
+}
+
+.hoyoverse {
+    padding: 0.1rem;
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+    height: 200px;
+    background: var(--color-white);
+    cursor: pointer;
+    box-shadow: var(--shadow-box);
+}
+
+.hoyo__box {
+    width: 100%;
+    height: 100%;
+}
+
+.hoyoverse__back-1 {
+    background: url(/assets/img/hoyoverse/honkai.jpg);
+    background-size: cover;
+}
+
+.hoyoverse__back-2 {
+    background: url(/assets/img/hoyoverse/honkai_star.jpg);
+    background-size: cover;
+}
+
+.hoyoverse__back-3 {
+    background: url(/assets/img/hoyoverse/Tears_of_Themis.jpg);
+    background-size: cover;
+}
+
+.hoyoverse__back-4 {
+    background: url(/assets/img/hoyoverse/zenless.webp);
+    background-size: cover;
+}
+
+.hoyoverse__back-5 {
+    background: url(/assets/img/hoyoverse/genshin.jpg);
+    background-size: cover;
+}
+
+.hoyoverse__icon {
+    position: absolute;
+    background: var(--color-white);
+    padding: 5px;
+    border-radius: 0 5px 5px 0;
+    border-top: 2px solid var(--color-black);
+    border-right: 2px solid var(--color-black);
+    border-bottom: 2px solid var(--color-black);
+    box-shadow: var(--shadow-box);
+}
+
+.hoyo__box-text {
+    display: none;
+}
+
+.hoyoverse.open {
+    height: 400px;
+}
+
+.hoyoverse.open .hoyo__box-text {
+    display: block;
+    margin: 5rem;
+    background: rgba(255,255,255,0.8);
+    text-align: center;
+    padding: 1rem;
+}
+
+.hoyoverse.open h4 {
+    display: block;
+    font-size: 2rem;
+    padding: 1rem;
+}
+
+.hoyoverse.open p {
+    display: block;
+    padding: 1rem;
+    font-weight: 600;
+}
+
+
+/*=========================== GAME===========================*/
+
+
+.game {
+    position: relative;
+    width: 100%;
+    min-height: 75vh;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.swiper {
+    width: 70%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    box-shadow: var(--shadow-box);
+    background: var(--color-white);
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 320px;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+}
+
+.game__img h2 {
+    padding: 30px;
+    font-size: 1rem;
+}

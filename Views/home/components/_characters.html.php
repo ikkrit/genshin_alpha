@@ -31,7 +31,7 @@
                             </td>
                             <td><?= $char_icon['weapon']; ?></td>
                             <td><?= $char_icon['city']; ?></td>
-                            <td><a href="/html/character.php?#<?= $char_icon['name']; ?>"><img src="../img/icon/plus.png" alt="icon plus"></a></td>
+                            <td><a href="/html/character.php?#<?= $char_icon['name']; ?>"><img src="/assets/img/icons/plus.png" alt="icon plus"></a></td>
                         </tr>
                     </tbody>
                 <?php endforeach ?>

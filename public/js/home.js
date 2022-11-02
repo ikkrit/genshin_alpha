@@ -19,3 +19,23 @@ window.addEventListener('scroll', () => {
     text.style.marginTop = value * 1.5 + 'px';
     btn.style.marginTop = value * 1.5 + 'px';
 });
+
+// WORLD HIDE
+
+const worlds = document.querySelectorAll('.world');
+
+worlds.forEach(world => {
+    world.addEventListener('click', () => {
+        world.classList.toggle('openw');
+    });
+});
+
+// HOYO HIDE 
+
+const hoyos = document.querySelectorAll('.hoyoverse');
+
+hoyos.forEach(hoyo => {
+    hoyo.addEventListener('click', () => {
+        hoyo.classList.toggle('open');
+    });
+});

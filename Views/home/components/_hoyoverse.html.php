@@ -3,7 +3,7 @@
     <div class="hoyoverse__container">
 
         <article class="hoyoverse">
-            <div class="hoyoverse__icon"><img src="../img/icon/plus.png" /></div>
+            <div class="hoyoverse__icon"><img src="/assets/img/icons/plus.png" /></div>
             <div class="hoyo__box hoyoverse__back-1">
                 <div class="hoyo__box-text">
                     <h4>Honkai Impact 3rd</h4>
@@ -17,7 +17,7 @@
         </article>
 
         <article class="hoyoverse">
-            <div class="hoyoverse__icon"><img src="../img/icon/plus.png" /></div>
+            <div class="hoyoverse__icon"><img src="/assets/img/icons/plus.png" /></div>
             <div class="hoyo__box hoyoverse__back-2">
                 <div class="hoyo__box-text">
                     <h4>Honkai : Star Rail</h4>
@@ -30,7 +30,7 @@
         </article>
 
         <article class="hoyoverse">
-            <div class="hoyoverse__icon"><img src="../img/icon/plus.png" /></div>
+            <div class="hoyoverse__icon"><img src="/assets/img/icons/plus.png" /></div>
             <div class="hoyo__box hoyoverse__back-3">
                 <div class="hoyo__box-text">
                     <h4>Tears of Themis</h4>
@@ -43,7 +43,7 @@
         </article>
 
         <article class="hoyoverse">
-            <div class="hoyoverse__icon"><img src="../img/icon/plus.png" /></div>
+            <div class="hoyoverse__icon"><img src="/assets/img/icons/plus.png" /></div>
             <div class="hoyo__box hoyoverse__back-4">
                 <div class="hoyo__box-text">
                     <h4>Zenless Zone Zero</h4>
@@ -56,7 +56,7 @@
         </article>
 
         <article class="hoyoverse">
-            <div class="hoyoverse__icon"><img src="../img/icon/plus.png" /></div>
+            <div class="hoyoverse__icon"><img src="/assets/img/icons/plus.png" /></div>
             <div class="hoyo__box hoyoverse__back-5">
                 <div class="hoyo__box-text">
                     <h4>Genshin Impact</h4>

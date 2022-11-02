@@ -35,10 +35,10 @@
         <div class="category__container">
 
             <div class="category__card">
-                <img src="../img/cards/card_1.png" alt="">
+                <img src="/assets/img/cards/card_1.png" alt="">
                 <div class="category__intro">
                     <div class="category__intro-title">
-                        <img src="../img/icon/genshin_black.png" alt="">
+                        <img src="/assets/img/icons/genshin_black.png" alt="">
                         <h2>Le Jeux</h2>
                     </div>
                     <p>Genshin Impact est un jeu vidéo de type action-RPG développé par miHoYo2, sorti en 2020 sur PlayStation 4, Windows, Android et iOS puis en 2021 sur PlayStation 5. </p>
@@ -47,10 +47,10 @@
             </div>
 
             <div class="category__card">
-                <img src="../img/cards/card_2.png" alt="">
+                <img src="/assets/img/cards/card_2.png" alt="">
                 <div class="category__intro">
                     <div class="category__intro-title">
-                        <img src="../img/icon/story.png" alt="">
+                        <img src="/assets/img/icons/story.png" alt="">
                         <h2>Histoire</h2>
                     </div>
                     <p>Dans un monde fantastique nommé Teyvat, une sœur et un frère se retrouvent séparés par une déesse inconnue. Le joueur commence son aventure en tant que Voyageur.</p>
@@ -59,10 +59,10 @@
             </div>
 
             <div class="category__card">
-                <img src="../img/cards/card_3.png" alt="">
+                <img src="/assets/img/cards/card_3.png" alt="">
                 <div class="category__intro">
                     <div class="category__intro-title">
-                        <img src="../img/icon/weapon.png" alt="">
+                        <img src="/assets/img/icons/weapon.png" alt="">
                         <h2>Les armes</h2>
                     </div>
                     <p>Il existe 5 types d'armes différents dans Genshin Impact et chaque personnage ne peut en manier qu'un seul. </p>
@@ -71,10 +71,10 @@
             </div>
 
             <div class="category__card">
-                <img src="../img/cards/card_4.png" alt="">
+                <img src="/assets/img/cards/card_4.png" alt="">
                 <div class="category__intro">
                     <div class="category__intro-title">
-                        <img src="../img/icon/artefact.png" alt="">
+                        <img src="/assets/img/icons/artefact.png" alt="">
                         <h2>Artéfacts</h2>
                     </div>
                     <p>Les artéfacts peuvent augmenter les statistiques d’un personnage et lui conférer certains effets.</p>
@@ -83,10 +83,10 @@
             </div>
 
             <div class="category__card">
-                <img src="../img/cards/card_5.jpg" alt="">
+                <img src="/assets/img/cards/card_5.jpg" alt="">
                 <div class="category__intro">
                     <div class="category__intro-title">
-                        <img src="../img/icon/discorde.png" alt="">
+                        <img src="/assets/img/icons/discorde.png" alt="">
                         <h2>Discord</h2>
                     </div>
                     <p>Genshin Impact dispose d'une grosse communauté de joueurs et afin de vous rassembler et trouver des guides, nous avons créé un Discord communautaire.</p>
@@ -95,10 +95,10 @@
             </div>
 
             <div class="category__card">
-                <img src="../img/cards/card_6.png" alt="">
+                <img src="/assets/img/cards/card_6.png" alt="">
                 <div class="category__intro">
                     <div class="category__intro-title">
-                        <img src="../img/icon/myhoyo.png" alt="">
+                        <img src="/assets/img/icons/myhoyo.png" alt="">
                         <h2>MiHoYo</h2>
                     </div>
                     <p>miHoYo Co., Ltd. est un studio de développement de jeux vidéo et d'animation basé à Shanghai. Fondé en 2012 par trois étudiants de l'université Jiao-tong de Shanghai.</p>
