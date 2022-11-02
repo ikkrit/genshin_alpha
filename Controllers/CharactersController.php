@@ -9,7 +9,7 @@
     {
         public function index()
         {
-            // INSTANCE -> MODELE -> ANNONCES
+            // INSTANCE -> MODELE -> CHARACTERS
             $charactersModel = new CharactersModel;
             // RECHERCHE ANNONCES
             $characters = $charactersModel->findBy(['actif' => 1]);
@@ -22,19 +22,25 @@
             // INSTANCE MODEL
             $charactersModel = new CharactersModel;
             // CHERCHER 1 CHARACTERS
-            $characters = $charactersModel->find($id, 'characters_id');
+            $characters = $charactersModel->find($id, 'character_id');
             // ENVOIE A LA VUE
             $this->render('characters/characters_read', compact('characters'), 'home', 'characters');
         }
 
-        // AJOUTER UNE ANNONCE
+        // AJOUTER UN PERSONNAGE
         public function add()
         {
             // ON VERIFIE SI L'UTILISATEUR EST CONNECTER
             if(isset($_SESSION['user']) && !empty($_SESSION['user']['id'])) {
                 // L'UTILISATEUR EST CONNECTER
                 // ON VERIFIE SI Le FORMULAIRE EST COMPLET
-                if(Form::validate($_POST, ['titre', 'description'])) {
+                if(Form::validate($_POST, ['character_name',
+                                           'character_element',
+                                           'character_weapon',
+                                           'character_city',
+                                           'character_image',
+                                           'character_back',
+                                           'character_build'])) {
                     // FORMULAIRE COMPLET
                     // PROTECTION FAILLES ...
                     $character_name = strip_tags($_POST['character_name']);
@@ -62,8 +68,8 @@
                     $character->create();
 
                     // REDIRECTION
-                    $_SESSION['message'] = "Votre annonce a été enregistrée avec succès";
-                    header('Location: /');
+                    $_SESSION['message'] = "Votre personnage à été enregistrer avec succès";
+                    header('Location: /characters');
                     exit;
 
                 } else {
@@ -95,8 +101,8 @@
                        'value' => $character_element
                    ])
                    ->addLabelFor('character_weapon', 'Arme du personnage :')
-                   ->addInput('text', 'character_element', [
-                       'id' => 'character_element', 
+                   ->addInput('text', 'character_weapon', [
+                       'id' => 'character_weapon', 
                        'class' => 'form_control',
                        'value' => $character_weapon
                    ])
@@ -112,9 +118,9 @@
                        'class' => 'form_control',
                        'value' => $character_image
                    ])
-                   ->addLabelFor('character_weapon', 'background du personnage :')
-                   ->addInput('text', 'character_element', [
-                       'id' => 'character_element', 
+                   ->addLabelFor('character_back', 'background du personnage :')
+                   ->addInput('text', 'character_back', [
+                       'id' => 'character_back', 
                        'class' => 'form_control',
                        'value' => $character_back
                    ])
@@ -127,7 +133,7 @@
                      ->addButton('Ajouter', ['class' => 'btn btn-primary'])
                      ->endForm();
 
-                $this->render('annonces/annonces_add', ['form' => $form->create()]);
+                $this->render('characters/characters_add', ['form' => $form->create()], 'home', 'characters');
 
 
             } else {

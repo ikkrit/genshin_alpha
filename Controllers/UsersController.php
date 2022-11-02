@@ -34,7 +34,7 @@
                     // PASSWORD CORRECT
                     // ON CREE LA SESSION
                     $user->setSession();
-                    header('Location: /');
+                    header('Location: /home');
                     exit;
 
                 } else {
@@ -137,7 +137,7 @@
                 // INSTANCE MODEL
                 $usersModel = new UsersModel;
                 // CHERCHER LE PROFIL
-                $profils = $usersModel->find($id);
+                $profils = $usersModel->find($id,'id');
                 // ENVOIE A LA VUE
                 $this->render('users/users_profil', ['profils' => $profils], 'default', 'users');
 
