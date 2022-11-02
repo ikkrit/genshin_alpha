@@ -425,32 +425,45 @@ tbody tr, td, th {
 .game {
     position: relative;
     width: 100%;
-    min-height: 75vh;
+    min-height: 100vh;
     justify-content: center;
     align-items: center;
+}
+
+.game__slider {
+    width: 800px;
+    height: 500px;
+    border-radius: 10px;
     overflow: hidden;
 }
 
-.swiper {
-    width: 70%;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    box-shadow: var(--shadow-box);
-    background: var(--color-white);
+.game__slides {
+    display: flex;
+    width: 500px;
+    height: 500px;
 }
 
-.swiper-slide {
-    background-position: center;
-    background-size: cover;
-    width: 320px;
+.game__slides input {
+    display: none;
 }
 
-.swiper-slide img {
-    display: block;
-    width: 100%;
+.game__slide {
+    width: 20%;
+    transition: 2s;
 }
 
-.game__img h2 {
-    padding: 30px;
-    font-size: 1rem;
+.game__slide img {
+    width: 800px;
+    height: 500px;
+}
+
+.game__navigation-manuel {
+
+}
+
+.manuel__btn {
+    border: 2px solid var(--color-black);
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
 }
