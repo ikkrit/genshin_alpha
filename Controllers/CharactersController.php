@@ -37,20 +37,25 @@
                 if(Form::validate($_POST, ['titre', 'description'])) {
                     // FORMULAIRE COMPLET
                     // PROTECTION FAILLES ...
-                    $titre = strip_tags($_POST['titre']);
-                    $description = strip_tags($_POST['description']);
+                    $character_name = strip_tags($_POST['character_name']);
+                    $character_element = strip_tags($_POST['character_element']);
+                    $character_weapon = strip_tags($_POST['character_weapon']);
+                    $character_city = strip_tags($_POST['character_city']);
+                    $character_image = strip_tags($_POST['character_image']);
+                    $character_back = strip_tags($_POST['character_back']);
+                    $character_build = strip_tags($_POST['character_build']);
 
                     // ON INSTANCIE NOTRE MODELE
                     $character = new CharactersModel;
 
                     // ON HYDRATE
-                    $character->setCharacter_name()
-                              ->setCharacter_element()
-                              ->setCharacter_weapon()
-                              ->setCharacter_city()
-                              ->setCharacter_image()
-                              ->setCharacter_back()
-                              ->setCharacter_build()
+                    $character->setCharacter_name($character_name)
+                              ->setCharacter_element($character_element)
+                              ->setCharacter_weapon($character_weapon)
+                              ->setCharacter_city($character_city)
+                              ->setCharacter_image($character_image)
+                              ->setCharacter_back($character_back)
+                              ->setCharacter_build($character_build)
                               ->setUser_id($_SESSION['user']['id']);
 
                     // ON ENREGISTRE
@@ -65,24 +70,60 @@
 
                     // LE FORMULAIRE EST INCOMPLET
                     $_SESSION['erreur'] = !empty($_POST) ? "Le formulaire est incomplet" : '';
-                    $titre = isset($_POST['titre']) ? strip_tags($_POST['titre']) : '';
-                    $description = isset($_POST['description']) ? strip_tags($_POST['description']) : '';
+                    $character_name = isset($_POST['character_name']) ? strip_tags($_POST['character_name']) : '';
+                    $character_element = isset($_POST['character_element']) ? strip_tags($_POST['character_element']) : '';
+                    $character_weapon = isset($_POST['character_weapon']) ? strip_tags($_POST['character_weapon']) : '';
+                    $character_city = isset($_POST['character_city']) ? strip_tags($_POST['character_city']) : '';
+                    $character_image = isset($_POST['character_image']) ? strip_tags($_POST['character_image']) : '';
+                    $character_back = isset($_POST['character_back']) ? strip_tags($_POST['character_back']) : '';
+                    $character_build = isset($_POST['character_build']) ? strip_tags($_POST['character_build']) : '';
                 }
 
                 $form = new Form;
 
                 $form->startForm()
-                     ->addLabelFor('titre', 'Titre de l\'annonce :')
-                     ->addInput('text', 'titre', [
-                        'id' => 'titre', 
-                        'class' => 'form-control',
-                        'value' => $titre
+                     ->addLabelFor('character_name', 'Nom du personnage :')
+                     ->addInput('text', 'character_name', [
+                        'id' => 'character_name', 
+                        'class' => 'form_control',
+                        'value' => $character_name
                     ])
-                     ->addLabelFor('description', 'Texte de l\'annonce')
-                     ->addTextarea('description', $description, [
-                        'id' => 'description', 
-                        'class' => 'form-control'
-                    ])
+                    ->addLabelFor('character_element', 'Element du personnage :')
+                    ->addInput('text', 'character_element', [
+                       'id' => 'character_element', 
+                       'class' => 'form_control',
+                       'value' => $character_element
+                   ])
+                   ->addLabelFor('character_weapon', 'Arme du personnage :')
+                   ->addInput('text', 'character_element', [
+                       'id' => 'character_element', 
+                       'class' => 'form_control',
+                       'value' => $character_weapon
+                   ])
+                   ->addLabelFor('character_city', 'Region du personnage :')
+                   ->addInput('text', 'character_city', [
+                       'id' => 'character_city', 
+                       'class' => 'form_control',
+                       'value' => $character_city
+                   ])
+                   ->addLabelFor('character_image', 'Image du personnage :')
+                   ->addInput('text', 'character_image', [
+                       'id' => 'character_image', 
+                       'class' => 'form_control',
+                       'value' => $character_image
+                   ])
+                   ->addLabelFor('character_weapon', 'background du personnage :')
+                   ->addInput('text', 'character_element', [
+                       'id' => 'character_element', 
+                       'class' => 'form_control',
+                       'value' => $character_back
+                   ])
+                   ->addLabelFor('character_build', 'Build du personnage :')
+                   ->addInput('text', 'character_build', [
+                       'id' => 'character_build', 
+                       'class' => 'form_control',
+                       'value' => $character_build
+                   ])
                      ->addButton('Ajouter', ['class' => 'btn btn-primary'])
                      ->endForm();
 
