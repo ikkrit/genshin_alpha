@@ -423,47 +423,130 @@ tbody tr, td, th {
 
 
 .game {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
+    min-height: 50vh;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .game__slider {
+    position: relative;
     width: 800px;
     height: 500px;
-    border-radius: 10px;
-    overflow: hidden;
+    margin: 10px;
 }
 
-.game__slides {
-    display: flex;
-    width: 500px;
-    height: 500px;
+.slide {
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    clip-path: circle(0% at 0 50%);
 }
 
-.game__slides input {
-    display: none;
-}
-
-.game__slide {
-    width: 20%;
+.slide.active {
+    clip-path: circle(150% at 0 50%);
     transition: 2s;
+    transition-property: clip-path;
 }
 
-.game__slide img {
-    width: 800px;
-    height: 500px;
+.slide img {
+    z-index: 1;
+    width: 100%;
+    border-radius: 5px;
 }
 
-.game__navigation-manuel {
-
+.slide .slide__info {
+    position: absolute;
+    top: 0;
+    padding: 15px 30px;
 }
 
-.manuel__btn {
-    border: 2px solid var(--color-black);
-    padding: 5px;
-    border-radius: 10px;
+.slide .slide__info h2 {
+    color: var(--color-white);
+    font-size: 45px;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.slide .slide__info p {
+    color: var(--color-white);
+    background: rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    width: 60%;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.slider__navigation {
+    z-index: 2;
+    position: absolute;
+    display: flex;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.slider__btn {
+    background: rgba(255, 255, 255,0.5);
+    width: 12px;
+    height: 12px;
+    margin: 10px;
+    border-radius: 50%;
     cursor: pointer;
+}
+
+.slider__btn.active {
+    background: #2696E9;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 900px) {
+    .game__slider {
+        width: 600px;
+        height: 375px;
+    }
+    .slide .slide__info {
+        padding: 10px 25px;
+    }
+    .slide .slide__info h2 {
+        font-size: 35px;
+    }
+    .slide .slide__info p {
+        width: 70%;
+        font-size: 15px;
+    }
+    .slider__navigation {
+        bottom: 50px;
+    }
+    .slider__btn {
+        width: 10px;
+        height: 10px;
+        margin: 8px;
+    }
+}
+
+@media (max-width: 500px) {
+    .game__slider {
+        width: 400px;
+        height: 250px;
+    }
+    .slide .slide__info {
+        padding: 10px 20px;
+    }
+    .slide .slide__info h2 {
+        font-size: 30px;
+    }
+    .slide .slide__info p {
+        width: 80%;
+        font-size: 13px;
+    }
+    .slider__navigation {
+        bottom: 50px;
+    }
+    .slider__btn {
+        width: 8px;
+        height: 8px;
+        margin: 6px;
+    }
 }
