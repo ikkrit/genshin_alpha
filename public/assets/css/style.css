@@ -301,7 +301,7 @@ a {
 .header__content {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 70vh;
     padding: 100px;
     display: flex;
     justify-content: center;
